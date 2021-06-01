@@ -64,8 +64,8 @@ public class RaterDB {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		RaterDatabase.initialize();
-		int size = RaterDatabase.size();
+		RaterDB.initialize();
+		int size = RaterDB.size();
 		System.out.println(size);
 	}
 
