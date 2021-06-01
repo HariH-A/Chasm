@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RaterDatabase {
+public class RaterDB {
 
 	private static HashMap<String, Rater> Raters;
 
