@@ -10,7 +10,7 @@ public class RaterDB {
 
 	private static HashMap<String, Rater> Raters;
 
-	private static void initialize() {
+	public static void initialize() {
 		if (Raters == null) {
 			Raters = new HashMap<String, Rater>();
 			String query = "select Rater_ID,ID,Rating from rating";
