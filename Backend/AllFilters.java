@@ -1,19 +1,20 @@
+
 import java.util.ArrayList;
 
-public class AllFilters implements Filter {
-    ArrayList<Filter> filters;
+public class AllFilters implements Filters {
+    ArrayList<Filters> filters;
     
     public AllFilters() {
-        filters = new ArrayList<Filter>();
+        filters = new ArrayList<Filters>();
     }
 
-    public void addFilter(Filter f) {
+    public void addFilter(Filters f) {
         filters.add(f);
     }
 
     @Override
     public boolean satisfies(String id) {
-        for(Filter f : filters) {
+        for(Filters f : filters) {
             if (! f.satisfies(id)) {
                 return false;
             }
