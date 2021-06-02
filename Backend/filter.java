@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class login
+ * Servlet implementation class filter
  */
-@WebServlet("/login")
-public class login extends HttpServlet {
+@WebServlet("/filter")
+public class filter extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public login() {
+	public filter() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -48,30 +48,42 @@ public class login extends HttpServlet {
 		Connection objcon = null;
 		ResultSet objRS = null;
 		String rs = null;
+		PreparedStatement st = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			objcon = DriverManager.getConnection("jdbc:mysql://localhost:3306/movie", "root", "");
 			PrintWriter out = response.getWriter();
-			PreparedStatement st = objcon.prepareStatement("select * from users where Rater_ID = ?");
-			st.setString(1, request.getParameter("id"));
+			String year = request.getParameter("year");
+			if(year == null || year =="") {
+				st = objcon.prepareStatement("SELECT * FROM movies WHERE genre LIKE '%"+request.getParameter("genre")+"%' AND Director LIKE '%"+
+						request.getParameter("dir")+"%' AND  year > '"+request.getParameter("yraf")+"'");
+							
+			}
+			else {
+				 st = objcon.prepareStatement("SELECT * FROM movies WHERE genre LIKE '%"+request.getParameter("genre")+"%' AND Director LIKE '%"+
+						request.getParameter("dir")+"%' AND year = '"+request.getParameter("year")+"'");
+			}
 			objRS = st.executeQuery();
 			while (objRS.next()) {
-				rs = objRS.getString(1);
-				if (!(objRS.getString(2).matches(request.getParameter("pass")))) {
-					out.println("<h1>INVALID PASSWORD</h1>");
-					}
-				else {
-				out.print("<h1>WELCOME!! Logged in successfully</h1><table><tr>");
-				out.print("<tr><td>User ID:</td><td>");
-				out.print(objRS.getString(1));
-				out.print("</tr>");
-				}
+				out.print("<br><h1>Movie Details</h1><table><tr>");
+				out.print("<tr><td>Movie name:</td><td>");
+				out.print(objRS.getString(2));
+				out.print("</td></tr><tr><td>Country:</td><td>");
+				out.print(objRS.getString(4));
+				out.print("</td></tr><tr><td>genre:</td><td>");
+				rs = objRS.getString(2);
+				out.print(objRS.getString(5));
+				out.print("</td></tr><tr><td>Director:</td><td>");
+				out.print(objRS.getString(6));
+				out.print("</td></tr><tr><td>Year:</td><td>");
+				out.print(objRS.getString(3));
+				out.print("</td></tr><tr><td>Runtime (in minutes):</td><td>");
+				out.print(objRS.getInt(7));
+				out.print("</tr></table>");
 			}
 
 			if (rs == null) {
-				objcon.close();
-				response.setContentType("text/html");
-				out.println("<html><body><h1>ID has not been Registered yet</h1></body></html>");
+				out.println("<h1>Sorry no data on this movie. Maybe try checking with alternate spelling.</h1>");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

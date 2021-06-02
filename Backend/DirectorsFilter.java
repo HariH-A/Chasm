@@ -1,5 +1,4 @@
-
-public class DirectorsFilter implements Filter{
+public class DirectorsFilter implements Filters{
     private String[] director;
     public DirectorsFilter(String dir)
     {
@@ -10,7 +9,7 @@ public class DirectorsFilter implements Filter{
     {   
         for(String dir:director)
         {
-            if(MovieDatabase.getDirector(movieId).contains(dir))
+            if(movieDB.getDirector(movieId).contains(dir))
             return true;
         }
         return false;    
