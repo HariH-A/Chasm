@@ -1,5 +1,5 @@
 
-public class GenreFilter implements Filter {
+public class GenreFilter implements Filters {
     
     private String myGenre;
 	
@@ -9,6 +9,6 @@ public class GenreFilter implements Filter {
 	
 	@Override
 	public boolean satisfies(String id) {
-		return MovieDatabase.getGenres(id).contains(myGenre);
+		return movieDB.getGenres(id).contains(myGenre);
 	}
 }

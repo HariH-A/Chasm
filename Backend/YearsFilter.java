@@ -1,5 +1,4 @@
-
-public class YearsFilter implements Filter {
+public class YearsFilter implements Filters {
 	private int myYear;
 	
 	public YearsFilter(int year) {
@@ -8,7 +7,7 @@ public class YearsFilter implements Filter {
 	
 	@Override
 	public boolean satisfies(String id) {
-		return MovieDatabase.getYear(id) >= myYear;
+		return movieDB.getYear(id) >= myYear;
 	}
 
 }

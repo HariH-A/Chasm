@@ -1,5 +1,4 @@
-
-public class MinutesFilter  implements Filter {
+public class MinutesFilter  implements Filters {
     private int minMinutes, maxMinutes;
     public MinutesFilter(int minutes, int maxutes)
     {
@@ -9,7 +8,7 @@ public class MinutesFilter  implements Filter {
     
     public boolean satisfies(String movieId)
     {   
-        int minutes=MovieDatabase.getMinutes(movieId);
+        int minutes=movieDB.getMinutes(movieId);
         return minMinutes<=minutes && maxMinutes>=minutes;
     }
 }
