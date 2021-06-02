@@ -81,7 +81,7 @@ public class RaterGetter{
         {
             //Rating here stores rater id and similarity with a given rater.
             Rating rat=similarRatings.get(i);
-            Rater currRater=RaterDB.getRater(rat.getItem());
+            Rater currRater=RaterDB.getRater(rat.getMovie());
             if(currRater.hasRating(movieId))
             {   
                 average+=rat.getValue()*currRater.getRating(movieId);
@@ -118,7 +118,7 @@ public class RaterGetter{
     private double dotProduct(Rater me,Rater r)
     {
         double dotProduct=0;
-        for(String movieID:me.getItemsRated())
+        for(String movieID:me.getMoviesRated())
         {
             if(r.hasRating(movieID))
             {
