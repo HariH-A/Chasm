@@ -1,0 +1,159 @@
+body{
+	background-color:black;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+/*Positioning the navibar*/
+.barcontain {
+  position:absolute;
+  margin: 10px;
+  width: 100%;
+  height:10%;
+}
+
+/*Navigation Bar left div*/
+.navibar {
+  width: 50%;
+  overflow-y: visible;
+  float:left;
+  position:absolute;
+}
+.navibar .menuicon{
+display:none;
+}
+.navibar .navicons{
+  float: left;
+  width: 25%;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 30px;
+}
+
+.navibar .navicons .fa{
+  color:white;
+  background:none;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+
+.navibar .fa:hover {
+  color:green;
+}
+
+/* Browse films */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  width:5.5em;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content i{
+  color: white;
+  display: block;
+  font-size:large;
+  text-align:center;
+}
+.dropdown-content a{
+  text-decoration: none;
+}
+
+.dropdown-content i:hover {
+  background-color: rgba(129,129,129,0.8);
+}
+
+/* Menu bar */
+.menuContainer {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left:3px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 28px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.changeBar .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.changeBar .bar2 {opacity: 0;}
+.changeBar .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+/*.....Menu Bar!...*/
+
+@media screen and (max-width: 800px) {
+  .navibar .navicons
+  {
+  	display: none;
+  }
+  .navibar .navicons.menuicon{
+       display:block;
+	}   
+
+}
+@media screen and (max-width: 800px) {
+  .navibar.responsiveNB 
+  {
+  	position: relative;
+  }
+  .navibar.responsiveNB .navicons {
+    display: block;
+    float:none;
+    text-align:center;
+    transition: all 0.3s ease;
+  }
+  .navibar.responsiveNB .dropdown-content {
+ 	width:2.8em;
+  }
+  .navibar.responsiveNB .navicons.menuicon {
+    position: relative;
+  }
+
+}
+/*....Navigation Bar!....*/
+/*Search container right div*/
+.search-container {
+  float: right;  
+  margin-top: 9px;
+  overflow:hidden;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  background-color:black;
+  color:white; 
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: black;
+  font-size: 17px;
+  border: none;
+  color:white;
+  background:none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: green;
+}
+@media screen and (max-width: 600px) {
+ .search-container {
+    float: none;
+  }
+}
+
+
