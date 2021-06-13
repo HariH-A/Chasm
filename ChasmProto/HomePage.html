@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Default.css">
+    <link rel="stylesheet" href="HomePage.css">
+    <script src="Default.js"></script>
+    <script src="HomePage.js"></script>
+    </head>
+    <body onload="showMovie(1)">
+	<div class="PersonaMovies">
+  		<div class="barcontain">
+		        <div class="search-container">
+	    			<form action="/search" method="post">
+	      			<input type="text" placeholder="Search Movies or Directors" name="search">
+	      			<button type="submit"><i class="fa fa-search"></i></button>
+	    			</form>
+ 			</div>	
+			<div class="navibar" id="nb">
+				  <a href="javascript:void(0);" class="menuicon navicons" onclick="responsiveNaviBar()">
+					 <div class="menuContainer" onclick="menuBar(this)">
+					  <div class="bar1"></div>
+					  <div class="bar2"></div>
+					  <div class="bar3"></div>
+					 </div>
+				  </a>
+				  <a href="./HomePage.jsp" class="navicons"><i class="fa fa-home"></i></a> 
+				  <div class="dropdown navicons">
+				  	<a href="#"><i class="fa fa-film"></i></a> 
+				    <div class="dropdown-content">
+					<a href="#"><i>Thriller</i></a>
+					<a href="#"><i>Comedy</i></a>
+					<a href="#"><i>Adventure</i></a>
+				    </div>
+				  </div> 
+			  	  <a href="#" class="navicons"><i class="fa fa-user"></i></a> 
+			    	  <a href="#" class="navicons"><i class="fa fa-eject"></i></a>
+			</div>
+		</div>
+
+		<!-- Personalized Movies -->
+ 		<div class="perMov">
+		      <img src="https://i.pinimg.com/originals/93/9e/11/939e1162894afe6e4097669684c6e30a.jpg" class="disPersono">
+		  </div>
+
+		  <div class="perMov">
+		      <img src="https://wallpapercave.com/wp/wp2196807.jpg" class="disPersono">
+		  </div>
+
+		  <div class="perMov">
+		      <img src="https://wallpapercave.com/wp/wp4137800.jpg" class="disPersono">
+		  </div>
+
+		  <div class="perMov">
+		    
+		      <img src="https://images4.alphacoders.com/810/810010.jpg" class="disPersono">
+		  </div>
+
+		  <div class="perMov">
+		      <img src="https://i.pinimg.com/originals/10/55/e7/1055e7cd01e2555d7136e3ffeafd55f8.png" class="disPersono">
+		  </div>
+
+		  <div class="perMov">
+		      <img src="https://images2.alphacoders.com/760/760735.jpg" class="disPersono">
+		  </div>
+	<!-- Next and previous buttons -->
+		  <a class="prev" onclick="nextMovie(-1)">&#10094;</a>
+		  <a class="next" onclick="nextMovie(1)">&#10095;</a>
+	</div>	<!-- Persona Movies -->
+	  <!-- Thumbnail Movies-->
+	<div class="perRowThumb">
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://i.pinimg.com/originals/93/9e/11/939e1162894afe6e4097669684c6e30a.jpg" style="width:	100%" onclick="currentMovie(1)" alt="Oldboy">
+		    </div>
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://wallpapercave.com/wp/wp2196807.jpg" style="width:100%" onclick="currentMovie(2)" alt="Dunkirk">
+		    </div>
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://wallpapercave.com/wp/wp4137800.jpg" style="width:100%" onclick="currentMovie(3)" alt="Vertigo">
+		    </div>
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://images4.alphacoders.com/810/810010.jpg" style="width:100%" onclick="currentMovie(4)" alt="Psycho">
+		    </div>
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://i.pinimg.com/originals/10/55/e7/1055e7cd01e2555d7136e3ffeafd55f8.png" style="width:100%" onclick="currentMovie(5)" alt="Persona">
+		    </div>
+		    <div class="movieColumn">
+		      <img class="thumb" src="https://images2.alphacoders.com/760/760735.jpg" style="width:100%" onclick="currentMovie(6)" alt="The Grand Budapest Hotel">
+		    </div>
+	</div>
+	
+
+
+	</body>
+</html>
+

@@ -1,0 +1,94 @@
+body{
+  background-image:url("https://wallpapercave.com/wp/dxaDz8c.jpg");
+  background-repeat:no-repeat;
+ background-size:cover;
+  overflow:hidden;
+}
+* {box-sizing: border-box}
+.container {
+  background-image:url("logodesk.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  z-index:-1;
+  background-blend-mode:darken;
+  background-position:45% 50%;
+  height:42em;
+  width:35em;
+  position: absolute;
+  left: 30%;
+  border-radius: 30px;
+  margin-top:-5px;
+}
+.center{
+	margin:auto;
+	width:100%;
+	height:42em;
+	position: absolute;
+	text-align:left;
+	background-color:rgba(40,40,40,0.3);
+	border-radius:10px;
+	padding-left:10px;
+	padding-top:60%;
+  
+}
+input[type=text], input[type=password] {
+  width: 25em;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: black;
+  color:white;
+}
+input:hover, input:focus{
+  background: rgba(200,200,200,1);
+  color:black;
+
+}
+strong{
+	text-align:left;
+	text-align:left;
+	color:rgba(200,200,200,1)
+}
+label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+        color:rgba(200,200,200,1);
+}
+.signin{
+  margin-top:10px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  display: inline-block;
+   float:right;	
+
+}
+.link{
+  margin-top:-10px;
+  text-decoration: none;
+  margin-left:6em;
+  float:left;	
+}
+
+
+.signin:hover {
+  background-color: rgba(200,200,200,1);
+  color: black;
+}
+
+p{
+text-align: right;
+    color:red;
+    float:right;
+}
+
+

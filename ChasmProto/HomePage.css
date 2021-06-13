@@ -1,0 +1,163 @@
+/*////////////////////////////Movie Container/////////////////////*/
+.PersonaMovies {
+  /* Needed to position the navbar */
+/*  (needed to position the left and right arrows)*/
+  position: relative;
+}
+.disPersono{
+	width:100%;
+	height:600px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+/* Hide the images by default */
+.perMov {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Positioning the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover, .close:hover, .close:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor:pointer;
+}
+/* Text on Personalized List */ 
+.perMovText {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  background-color: rgba(0,0,0,0.6);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.perMovText p{
+   color: white;
+   text-align:right;
+}
+
+/* Container for category*/
+.category {
+  text-align: left;
+  background-color: rgba(34,34,34,1);
+  padding: 2px 16px;
+  color: white;
+}
+
+/* Six columns side by side */
+.movieColumn {
+  float: left;
+  width: 16.66%; 
+}
+
+/* Row Divisions */
+.rowThumb, .movieRow {
+/*  content: "";*/
+  display: table;
+  clear: both;
+}
+
+/* Adding transparency effect for thumnbail images */
+.thumb {
+  cursor: pointer;
+  opacity: 0.6;
+  height:10%;
+}
+
+.pero{
+  height:1%;
+  cursor: pointer;
+  opacity: 0.6;
+	width:100%;
+	height:120px;
+}
+
+.pero:hover, .active, .thumb:hover {
+  opacity: 1;
+
+}
+
+
+/* The Modal Background */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); 
+    text-align:center;
+}
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* Movie Modal Image*/
+.modal-content {
+   height:75%;
+  margin: auto;
+  max-width:400px;
+}
+
+/* Movie Details */
+#movieDets {
+    text-align: left;
+    color: white;
+   display:inline-block;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #movieDets {    
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 60%%;
+    }
+}
+
