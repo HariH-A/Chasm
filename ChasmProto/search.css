@@ -1,0 +1,33 @@
+/*Positioning the movie results search*/
+.movieContainer{
+  top: 100px;
+  left: 40px;
+  margin: auto;
+  width: 80%;
+  position:absolute;
+  background-color: rgba(34,34,34,1);
+  z-index:-1;
+ color:white;
+
+}
+.movieContainer img{
+  float:right;
+  height:100%;
+  width:25%;
+  clear:right;
+}
+.movieContainer table{
+  width:75%;
+  float:left;
+  border-collapse: collapse;
+ table-layout:fixed;
+}
+.movieContainer th{
+	height:1.5em;
+	text-align:left;
+	padding-left:20px;
+}
+.movieContainer p{
+	text-align:left;
+	padding-left:20px;
+}
